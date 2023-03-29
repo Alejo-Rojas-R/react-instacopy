@@ -1,0 +1,120 @@
+.header {
+    padding: 15px;
+}
+
+.menu__logo {
+    font-family: 'Futura', 'Avant Garde', 'Avenir';
+
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+}
+
+.body {
+    justify-content: center;
+    width: 100%;
+}
+
+.footer {}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__item {}
+
+/* List Item */
+.list {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.list-item {
+    margin: 30px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.list-item__top {}
+
+.list-item__image {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.list-item__bottom {
+    padding: 15px;
+    position: relative;
+}
+
+.list-item__caption p {
+    margin: 0px;
+}
+
+.list-item__avatar {
+    height: 20px;
+}
+
+.list-item__user {
+    display: flex;
+    align-items: center;
+}
+
+.list-item__actions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+.profile-header {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.profile-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*
+.profile-posts .post {
+    width: 33%;
+    margin: 15px;
+}
+*/
+.profile-posts img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.spinner {
+    display: flex;
+    margin: auto;
+}
+
+.profile-posts {
+     width: 100%;
+     max-width: 1000px;
+     margin: auto;
+}
