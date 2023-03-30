@@ -1,10 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 
-export const Pagination = ({ elements }) => {
+export const Pagination = ({ data , setData }) => {
 
     const { page } = useParams();
-    elements = elements.slice(page, 10);
+
+    data = data.slice(page, 9);
+
+    setData(data);
 
     return (
         <div>Pagination</div>

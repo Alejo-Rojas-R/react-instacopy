@@ -1,0 +1,63 @@
+.list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-item {
+    margin: 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    width: 100%;
+}
+
+.list-item__top {}
+
+.list-item__image {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.list-item__bottom {
+    padding: 15px;
+    position: relative;
+}
+
+.list-item__caption p {
+    margin: 0px;
+}
+
+.list-item__avatar {
+    height: 20px;
+}
+
+.list-item__user {
+    display: flex;
+    align-items: center;
+}
+
+.list-item__actions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+.list-item__action-like--liked svg {
+    color: red;
+}

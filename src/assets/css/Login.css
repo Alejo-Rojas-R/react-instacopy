@@ -1,0 +1,22 @@
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    margin: 8px;
+    padding: 10px;
+}
+
+.login-form {
+    width: 500px;
+    height: 250px;
+    margin: 100px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

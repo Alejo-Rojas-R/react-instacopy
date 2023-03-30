@@ -18,13 +18,13 @@ export const Router = ({ user, setUser }) => {
 
       <div className='body'>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home user={user} />} />
           <Route path='/home' element={<Navigate to='/' />} />
 
           <Route path='/login' element={Object.keys(user).length > 0 ? <Navigate replace to='/home' /> : <Login user={user} setUser={setUser} />} />
           <Route path='/register' element={Object.keys(user).length > 0 ? <Navigate replace to='/home' /> : <Register />} />
 
-          <Route path='/profile/:user' element={<Navigate to={`/profile/${user.id}/1`} />} />
+          <Route path='/profile/:user' element={<Profile />} />
           <Route path='/profile/:user/:page' element={<Profile />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

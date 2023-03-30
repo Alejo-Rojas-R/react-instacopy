@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import { NavLink } from 'react-router-dom';
+import '../assets/css/Login.css';
 
 export const Login = ({ user, setUser }) => {
 
@@ -31,12 +33,14 @@ export const Login = ({ user, setUser }) => {
 
   return (
     <div className='login-form'>
+      <h2>Login</h2>
       <form onSubmit={validateUser}>
         <input name='email' ref={email} />
         <input name='password' ref={password} />
         <input type='submit' value='Send' />
         {notFound && <div>User not found</div>}
       </form>
+      <NavLink to='/register'>Register</NavLink>
     </div>
   )
 }

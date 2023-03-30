@@ -11,7 +11,6 @@ export const Profile = (() => {
 
   useEffect(() => {
     getUser();
-
   }, [currentUser]);
 
   const getUser = (async () => {
@@ -29,7 +28,7 @@ export const Profile = (() => {
 
     const photos = photosData.filter(photo => {
       return photo.albumId === currentUser.id;
-    }, currentUser.id);
+    }, currentUser.id).slice(0, 9);
 
     setUserPhotos(photos);
     setLoading(false);
