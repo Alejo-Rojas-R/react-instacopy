@@ -18,7 +18,7 @@ export const Menu = ({ user, setUser }) => {
                     <div className='menu__item'>
                         <NavLink to={`/profile/${user.id}`}>Profile</NavLink>
                     </div>
-                    <button onClick={logout}>Logout</button>
+                    <div className='menu__item' onClick={logout}>Logout</div>
                 </>
                 :
                 <>

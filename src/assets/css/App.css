@@ -1,10 +1,19 @@
-.header {
-    padding: 15px;
+a {
+    color: black;
 }
 
-.menu__logo {
-    font-family: 'Futura', 'Avant Garde', 'Avenir';
+.header {
+    padding: 15px;
+    border: 1px solid #ccc;
+}
 
+.menu__logo,
+.menu__logo a {
+    font-family: 'Brush Script MT';
+    font-size: 27px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .avatar {
@@ -25,7 +34,12 @@
     justify-content: space-between;
 }
 
-.menu__item {}
+.menu__item,
+.menu__item a {
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .spinner {
     display: flex;

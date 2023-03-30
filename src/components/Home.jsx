@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { ListPosts } from './ListPosts';
 import '../assets/css/Home.css';
 
-
 export const Home = ({ user }) => {
 
   const [data, setData] = useState();
