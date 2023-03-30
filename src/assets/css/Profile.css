@@ -1,0 +1,36 @@
+.list-item {
+    margin: 15px;
+    border-radius: unset;
+    border: unset;
+    max-width: unset;
+    width: unset;
+}
+
+.profile-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/*
+.profile-posts .post {
+    width: 33%;
+    margin: 15px;
+}
+*/
+.profile-posts img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: unset;
+}
+
+.profile-header {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
-
-import '../assets/css/Home.css';
 import { ListPosts } from './ListPosts';
+import '../assets/css/Home.css';
+
 
 export const Home = ({ user }) => {
 
@@ -38,7 +38,7 @@ export const Home = ({ user }) => {
       {loading ?
         <img className='spinner' src={require('../assets/images/loading.gif')} alt='spinner' />
         :
-        <ListPosts data={data} user={user} />
+        <ListPosts data={data} user={user} showDetails={true}/>
       }
     </div>
   );

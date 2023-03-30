@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Pagination } from './Pagination';
+import { ListPosts } from './ListPosts';
+import '../assets/css/Profile.css';
 
 export const Profile = (() => {
 
@@ -48,13 +49,7 @@ export const Profile = (() => {
             </div>
           </div>
           <div className='profile-posts'>
-            {userPhotos.map(photo => {
-              return (
-                <div key={photo.id} className='post'>
-                  <img src={photo.url} />
-                </div>
-              )
-            })}
+            <ListPosts data={userPhotos} showDetails={false} />
           </div>
         </>
       }

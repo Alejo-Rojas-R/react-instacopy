@@ -14,6 +14,10 @@
     width: 100%;
 }
 
+.list-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .list-item__top {}
 
 .list-item__image {
@@ -56,6 +60,10 @@
 footer {
     text-align: center;
     padding: 15px;
+}
+
+.list-item__actions>div {
+    cursor: pointer;
 }
 
 .list-item__action-like--liked svg {

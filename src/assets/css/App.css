@@ -27,37 +27,7 @@
 
 .menu__item {}
 
-.profile-header {
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-}
-
-.profile-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-/*
-.profile-posts .post {
-    width: 33%;
-    margin: 15px;
-}
-*/
-.profile-posts img {
-    width: 100%;
-    max-width: 300px;
-}
-
 .spinner {
     display: flex;
     margin: auto;
-}
-
-.profile-posts {
-     width: 100%;
-     max-width: 1000px;
-     margin: auto;
 }
