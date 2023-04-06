@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import '../assets/css/Login.css';
+import '../../assets/css/Login.css';
 
 export const Login = ({ user, setUser }) => {
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { ListPosts } from './ListPosts';
-import '../assets/css/Home.css';
+import { ListPosts } from '../layout/ListPosts';
+import '../../assets/css/Home.css';
 
 export const Home = ({ user }) => {
 
@@ -35,9 +35,9 @@ export const Home = ({ user }) => {
   return (
     <div className='list'>
       {loading ?
-        <img className='spinner' src={require('../assets/images/loading.gif')} alt='spinner' />
+        <img className='spinner' src={require('../../assets/images/loading.gif')} alt='spinner' />
         :
-        <ListPosts data={data} user={user} showDetails={true}/>
+        <ListPosts data={data} user={user} showDetails={true} />
       }
     </div>
   );

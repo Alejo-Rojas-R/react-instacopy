@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
-import { Footer } from '../components/Footer';
-import { Home } from '../components/Home';
-import { Login } from '../components/Login';
-import { NotFound } from '../components/NotFound';
-import { Profile } from '../components/Profile';
-import { Register } from '../components/Register';
-import { Menu } from '../components/Menu';
+import { Footer } from '../components/layout/Footer';
+import { Home } from '../components/pages/Home';
+import { Login } from '../components/pages/Login';
+import { NotFound } from '../components/pages/NotFound';
+import { Profile } from '../components/pages/Profile';
+import { Register } from '../components/pages/Register';
+import { Menu } from '../components/layout/Menu';
 
 export const Router = ({ user, setUser }) => {
 
