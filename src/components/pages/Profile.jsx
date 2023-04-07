@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ListPosts } from '../layout/ListPosts';
 import '../../assets/css/Profile.css';
+import Spinner from '../../assets/images/Spinner.gif';
 
 export const Profile = (() => {
 
@@ -38,7 +39,7 @@ export const Profile = (() => {
   return (
     <div className='profile'>
       {loading ?
-        <img className='spinner' src={require('../../assets/images/loading.gif')} alt='spinner' />
+        <img className='spinner' src={Spinner} alt='spinner' />
         :
         <>
           <div className='profile-header'>

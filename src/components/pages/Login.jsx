@@ -6,25 +6,28 @@ export const Login = ({ user, setUser }) => {
 
   const [notFound, setNotFound] = useState(false);
 
-  const email = useRef();
+  const username = useRef();
   const password = useRef();
 
   const validateUser = async e => {
     e.preventDefault();
 
-    const userResult = await fetch('https://reqres.in/api/users?per_page=100');
-    let userData = await userResult.json();
-
-    const currentEmail = email.current.value;
+    const currentUsername = username.current.value;
     const currentPassword = password.current.value;
 
-    let userFound = userData.data.filter(user => user.email === currentEmail /*&& user.password === currentPassword*/);
-    userFound = userFound[0];
+    const userResult = await fetch(`https://dummyjson.com/users/filter?key=username&value=${currentUsername}`);
+    let userData = await userResult.json();
+    let userFound = false;
+
+    if (userData.total > 0) {
+      userData = userData.users[0];
+      userFound = userData.password == currentPassword;
+    }
 
     if (userFound) {
-      localStorage.setItem('user', JSON.stringify(userFound));
+      localStorage.setItem('user', JSON.stringify(userData));
 
-      setUser(userFound);
+      setUser(userData);
       setNotFound(false);
     } else {
       setNotFound(true);
@@ -35,7 +38,7 @@ export const Login = ({ user, setUser }) => {
     <div className='login-form'>
       <h2>Login</h2>
       <form onSubmit={validateUser}>
-        <input name='email' ref={email} />
+        <input name='username' ref={username} />
         <input name='password' ref={password} />
         <input type='submit' value='Send' />
         {notFound && <div>User not found</div>}

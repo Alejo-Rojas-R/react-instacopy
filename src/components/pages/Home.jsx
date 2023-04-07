@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { ListPosts } from '../layout/ListPosts';
 import '../../assets/css/Home.css';
+import Spinner from '../../assets/images/Spinner.gif';
 
 export const Home = ({ user }) => {
 
@@ -30,12 +31,10 @@ export const Home = ({ user }) => {
     setData(result);
   }
 
-  // useMemo(() => getData(), [data]);
-
   return (
     <div className='list'>
       {loading ?
-        <img className='spinner' src={require('../../assets/images/loading.gif')} alt='spinner' />
+        <img className='spinner' src={Spinner} alt='spinner' />
         :
         <ListPosts data={data} user={user} showDetails={true} />
       }

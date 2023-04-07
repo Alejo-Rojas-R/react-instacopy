@@ -12,7 +12,7 @@ export const ListPosts = ({ data, user, showDetails }) => {
                     </div>
                     {showDetails &&
                         <div className='list-item__bottom'>
-                            <PostActions post={post} user={user} />
+                            <PostActions postProp={post} userProp={user} />
                         </div>
                     }
                 </div>)

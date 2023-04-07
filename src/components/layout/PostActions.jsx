@@ -3,60 +3,68 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 
-export const PostActions = ({ post, user }) => {
-    const liked = JSON.parse(localStorage.getItem('saved'));
+export const PostActions = ({ postProp, userProp }) => {
 
-    const [likedData, setLikedData] = useState(liked === null ? [] : liked);
+    const [color, setColor] = useState('black');
 
-    const pairLikedData = (postId) => {
-        const isLiked = likedData.some(post => (post.postId === postId && post.userId === user.id), user)
+    useEffect(() => {
+        const likedStorage = JSON.parse(localStorage.getItem('saved')) ?? [];
 
-        return (isLiked === true) ? 'list-item__action-like--liked' : '';
-    }
+        // Get liked elements
+        const isLiked = likedStorage.some(post => (post.postId === postProp.photo.id && post.userId === userProp.id));
 
-    const savePost = (e, postId) => {
+        setColor(isLiked ? 'red' : 'black');
+    }, [color]);
 
+    const savePost = (postId) => {
         // Validate if user is logged in
-        if (Object.keys(user).length == 0) {
-            alert('Please login to do this action.');
+        if (Object.keys(userProp).length == 0) {
+            alert('Please login to perform this action.');
             return false;
         }
 
-        let likedItems = likedData;
+        let likedStorage = JSON.parse(localStorage.getItem('saved')) ?? [];
+
+        // Validate if clicked post is inside the liked elements
+        const isLiked = likedStorage.some(post => (post.postId === postId && post.userId === userProp.id));
 
         // If item is already liked, remove it by filtering the others
-        const isLiked = likedItems.some(post => (post.postId === postId && post.userId === user.id), user);
         if (isLiked) {
-            likedItems = likedItems.filter(post => (post.postId !== postId || post.userId !== user.id), user);
+            likedStorage = likedStorage.filter(post => (post.postId !== postId || post.userId !== userProp.id));
+
+            localStorage.setItem('saved', JSON.stringify(likedStorage));
+
+            setColor('black');
         }
         // If item is not in the array add it
         else {
             const itemToSave = {
-                'userId': user.id,
+                'userId': userProp.id,
                 'postId': postId
             };
 
-            likedItems.push(itemToSave);
-        }
+            likedStorage.push(itemToSave);
 
-        localStorage.setItem('saved', JSON.stringify(likedItems));
-        setLikedData(likedItems);
+            localStorage.setItem('saved', JSON.stringify(likedStorage));
+
+            setColor('red');
+        }
     }
 
     return (
         <>
             <div className='list-item__user'>
-                <img className='avatar list-item__avatar' src={post.user.avatar} />
+                <img className='avatar list-item__avatar' src={postProp.user.avatar} />
                 &nbsp;
-                <strong><NavLink to={`profile/${post.user.id}`}>{post.user.first_name} {post.user.last_name}</NavLink></strong>
+                <strong><NavLink to={`profile/${postProp.user.id}`}>{postProp.user.first_name} {postProp.user.last_name}</NavLink></strong>
             </div>
             <div className='list-item__actions'>
-                <div className={'list-item__action-like ' + pairLikedData(post.photo.id)} onClick={e => savePost(e, post.photo.id)}>
-                    <FontAwesomeIcon icon={faHeart} color={'black'} />
+                <div className={'list-item__action-like'} onClick={() => { savePost(postProp.photo.id) }}>
+                    <FontAwesomeIcon icon={faHeart} color={color} />
                 </div>
             </div>
             <div className='list-item__caption'>
-                {post.photo.title}
+                {postProp.photo.title}
             </div>
         </>
     )
